@@ -34,7 +34,8 @@ namespace BinarySearchTree
                         binaryTree.Display();          
             
                         binaryTree.GetSize();
-                       
+                        bool result = binaryTree.IfValueExists(67, binaryTree);
+                        Console.WriteLine(result);
         }
     }
 }
