@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace BinarySearchTree
 {
+    //Creating binary search tree using generics and IComparable to use CompareTo method in program(UC1)
     public class BinSearchTree<T> where T : IComparable<T>
     {
         public T NodeData { get; set; }
@@ -21,7 +22,7 @@ namespace BinarySearchTree
 
         int leftCount = 0, rightCount = 0;
 
-        //Method to check and add node value to either left or right by comparing
+        //Method to check node and add node value to either left or right by comparing
         public void Insert(T data)
         {
             T currentNodeValue = NodeData;
@@ -41,7 +42,6 @@ namespace BinarySearchTree
             }
         }
 
-        //Displaying the data
         public void Display()
         {
             if (this.LeftTree != null)
@@ -55,6 +55,12 @@ namespace BinarySearchTree
                 rightCount++;
                 RightTree.Display();
             }
+        }
+
+        //Method to get the size of the binary tree
+        public void GetSize()
+        {
+            Console.WriteLine("\nSize of the binary tree is : " + (1 + this.leftCount + this.rightCount) + "\n");
         }
     }
 }
